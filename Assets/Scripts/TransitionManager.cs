@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TTsTransitionScript : MonoBehaviour
+public class TransitionManager : MonoBehaviour
 {
     [SerializeField]
     private Transition[] transitions;
