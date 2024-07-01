@@ -418,7 +418,6 @@ GameObject:
   - component: {fileID: 303538001}
   - component: {fileID: 303538000}
   - component: {fileID: 303537999}
-  - component: {fileID: 303537998}
   m_Layer: 0
   m_Name: initial room
   m_TagString: Untagged
@@ -426,23 +425,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &303537998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 303537997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff29411dd425fbc429a807f07f425b04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  plantZoomedInView: {fileID: 146430774}
-  initialView: {fileID: 303537997}
-  transitionOverlay: {fileID: 323606173}
-  upwardArrow: {fileID: 1386570032}
-  downwardArrow: {fileID: 1503990806}
 --- !u!61 &303537999
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -660,14 +642,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitions:
+  - from: {fileID: 303537997}
+    to: {fileID: 146430774}
+    transitionOverlay: {fileID: 323606173}
+    upwardArrow: {fileID: 1386570032}
+    downwardArrow: {fileID: 1503990806}
   - from: {fileID: 0}
     to: {fileID: 0}
+    transitionOverlay: {fileID: 0}
+    upwardArrow: {fileID: 0}
+    downwardArrow: {fileID: 0}
   - from: {fileID: 0}
     to: {fileID: 0}
+    transitionOverlay: {fileID: 0}
+    upwardArrow: {fileID: 0}
+    downwardArrow: {fileID: 0}
   - from: {fileID: 0}
     to: {fileID: 0}
-  - from: {fileID: 0}
-    to: {fileID: 0}
+    transitionOverlay: {fileID: 0}
+    upwardArrow: {fileID: 0}
+    downwardArrow: {fileID: 0}
 --- !u!4 &572985872
 Transform:
   m_ObjectHideFlags: 0
@@ -1576,10 +1570,10 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 754978602}
+  - {fileID: 572985872}
   - {fileID: 303538001}
   - {fileID: 146430777}
   - {fileID: 1911494876}
-  - {fileID: 572985872}
   - {fileID: 1650889247}
   - {fileID: 2015600966}
   - {fileID: 1935622988}

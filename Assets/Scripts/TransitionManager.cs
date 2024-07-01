@@ -16,9 +16,19 @@ public class Transition
     private GameObject from;
     [SerializeField]
     private GameObject to;
+    [SerializeField] GameObject transitionOverlay; //transitional effects
+    [SerializeField] GameObject upwardArrow; //ui
+    [SerializeField] GameObject downwardArrow;//ui
 
-    public void Go()
+      public void SwapSprites()
     {
-        // Do stuff here
+       
+        from.SetActive(false);  // Hide initial view
+        to.SetActive(true);  // Show zoomed-in view
+
+        upwardArrow.SetActive(true);  // Show upward button
+        downwardArrow.SetActive(true);  // Show downward button
+
+      
     }
 }
