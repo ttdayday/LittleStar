@@ -1,34 +1,41 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TransitionManager : MonoBehaviour
 {
     [SerializeField]
-    private Transition[] transitions;
+    private Transition transition;
+
+    public void TriggerTransition()
+    {
+        transition.SwapSprites();
+    }
 }
 
-[Serializable]
+[System.Serializable]
 public class Transition
 {
     [SerializeField]
     private GameObject from;
     [SerializeField]
     private GameObject to;
-    [SerializeField] GameObject transitionOverlay; //transitional effects
-    [SerializeField] GameObject upwardArrow; //ui
-    [SerializeField] GameObject downwardArrow;//ui
+    [SerializeField]
+    private GameObject upwardArrow; // UI
+    [SerializeField]
+    private GameObject downwardArrow; // UI
 
-      public void SwapSprites()
+    public void SwapSprites()
     {
-       
         from.SetActive(false);  // Hide initial view
-        to.SetActive(true);  // Show zoomed-in view
+        to.SetActive(true);  // Show new view
 
-        upwardArrow.SetActive(true);  // Show upward button
-        downwardArrow.SetActive(true);  // Show downward button
+        if (upwardArrow != null)
+        {
+            upwardArrow.SetActive(true);  // Show upward button
+        }
 
-      
+        if (downwardArrow != null)
+        {
+            downwardArrow.SetActive(true);  // Show downward button
+        }
     }
 }
