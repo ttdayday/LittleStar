@@ -22,6 +22,7 @@ public class Transition
     private GameObject upwardArrow; // UI
     [SerializeField]
     private GameObject downwardArrow; // UI
+   
 
     public void SwapSprites()
     {
